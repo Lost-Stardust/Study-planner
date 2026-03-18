@@ -82,6 +82,14 @@ body {
   margin-top: 1.5%;
   display: none;
 }
+#Settings {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 4%;
+  margin-top: 1.5%;
+  display: none;
+}
 #sidebar {
   flex: 0.17;
   max-width: 254px;
@@ -281,5 +289,8 @@ body {
   display: flex;
 }
 #Projects.active {
+  display: flex;
+}
+#Settings.active {
   display: flex;
 }
