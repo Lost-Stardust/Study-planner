@@ -87,6 +87,7 @@ body {
 .options > div {
   display: flex;
   gap: 8%;
+  padding: 3%;
 }
 .title {
   border-bottom: solid 1px rgb(83, 83, 83);
