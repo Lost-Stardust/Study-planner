@@ -66,6 +66,9 @@ body {
     rgba(5, 0, 9, 1) 100%
   );
 }
+
+/* sidebar styles */
+
 #Dashboard {
   display: flex;
   flex: 1;
@@ -148,6 +151,9 @@ body {
   align-items: center;
   color: white;
 }
+
+/* Dashboard styles */
+
 .greeting {
   flex: 0.24;
   color: white;
