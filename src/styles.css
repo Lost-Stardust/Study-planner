@@ -257,3 +257,7 @@ body {
   color: #d8d8d8;
   background-color: transparent;
 }
+/* sidebar options active */
+.options > div.active {
+  background: linear-gradient(160deg, #9811fa 0%, #4a007e 100%);
+}
