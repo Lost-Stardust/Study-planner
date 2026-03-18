@@ -1,6 +1,8 @@
 // Style logic for current tab in the sidebar and view switching
 const options = document.querySelectorAll(".options div");
-const views = [...document.querySelectorAll("#Dashboard, #Projects")];
+const views = [
+  ...document.querySelectorAll("#Dashboard, #Projects, #Settings"),
+];
 
 options.forEach((option) => {
   option.addEventListener("click", () => {
