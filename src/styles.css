@@ -66,15 +66,26 @@ body {
     rgba(5, 0, 9, 1) 100%
   );
 }
-#view {
+#Dashboard {
   display: flex;
   flex: 1;
   flex-direction: column;
   margin: 4%;
   margin-top: 1.5%;
+  display: none;
+}
+#Projects {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 4%;
+  margin-top: 1.5%;
+  display: none;
 }
 #sidebar {
   flex: 0.17;
+  max-width: 254px;
+  min-width: 170px;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -259,7 +270,16 @@ body {
   color: #d8d8d8;
   background-color: transparent;
 }
+
 /* sidebar options active */
 .options > div.active {
   background: linear-gradient(160deg, #9811fa 0%, #4a007e 100%);
+}
+
+/* view active */
+#Dashboard.active {
+  display: flex;
+}
+#Projects.active {
+  display: flex;
 }
