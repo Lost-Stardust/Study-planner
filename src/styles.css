@@ -90,6 +90,7 @@ body {
   gap: 8%;
   padding: 3%;
   border-radius: 8px;
+  cursor: pointer;
 }
 .title {
   border-bottom: solid 1px rgb(83, 83, 83);
