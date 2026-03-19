@@ -308,6 +308,12 @@ body {
   border: none;
   cursor: pointer;
 }
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
 
 /* popup styles */
 
