@@ -309,6 +309,65 @@ body {
   cursor: pointer;
 }
 
+/* popup styles */
+
+.popup {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  border-radius: 7px;
+  height: 180px;
+  z-index: 10;
+  min-width: 25%;
+  padding: 10px 15px 0 15px;
+  background: #53008e;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.popup > form > .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.popup > form > .buttons > button {
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  background: #9811fa;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 /* sidebar options active */
 .options > div.active {
   background: linear-gradient(160deg, #9811fa 0%, #4a007e 100%);
