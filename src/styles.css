@@ -312,7 +312,44 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 4px;
+  gap: 12px;
+  padding-top: 4%;
+}
+.project {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 13px;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(160deg, #9811fa 0%, #53008e7f 100%);
+}
+.Default.active {
+  display: none;
+}
+.project > .buttons {
+  display: flex;
+  gap: 40px;
+  height: 70%;
+}
+.project > .buttons > .remove,
+.project > .buttons > .add-task,
+.project > .buttons > .edit {
+  width: 30px;
+  border: none;
+}
+.project > .buttons > .remove {
+  background: no-repeat center / contain url("./assets/trash.svg");
+}
+.project > .buttons > .add-task {
+  background: no-repeat center / contain url("./assets/add.svg");
+}
+.project > .buttons > .edit {
+  background: no-repeat center / contain url("./assets/pencil.svg");
 }
 
 /* popup styles */
