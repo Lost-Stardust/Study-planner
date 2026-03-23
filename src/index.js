@@ -2,7 +2,7 @@ import "../src/styles.css";
 
 // js module imports
 import "./ui.js";
-import { projectPopup } from "./project-popup";
+import { projectPopup } from "./project-popup.js";
 import { makeProject } from "./project-ui";
 import { projectList } from "./add-project";
 import { todoPopup } from "./todo-popup.js";
