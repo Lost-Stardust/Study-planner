@@ -58,6 +58,10 @@ body {
 }
 
 #wrapper {
+  display: none;
+}
+
+#wrapper.active {
   display: flex;
   height: 100%;
   background: linear-gradient(
@@ -67,6 +71,258 @@ body {
     rgba(5, 0, 9, 1) 100%
   );
 }
+/* . */
+/* . */
+/* . */
+/*  ========== HUZIAFA'S SIGN UP FORM CODE ==========  */
+
+#sign-up-page.active,
+#log-in-page.active,
+#forgot-pass-page.active {
+  display: flex;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #1e0a2f, #4c1d95, #9333ea);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+#sign-up-page {
+  display: none;
+}
+#log-in-page {
+  display: none;
+}
+#forgot-pass-page {
+  display: none;
+}
+
+/* LEFT PANEL */
+.cat-box {
+  width: 40%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* LOGO + TITLE */
+.logo-container h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.credit {
+  position: absolute;
+  bottom: 20px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* RIGHT FORM SECTION */
+.form-box {
+  width: 60%;
+  background: rgba(30, 20, 60, 0.75);
+  backdrop-filter: blur(15px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* TEXT */
+.text {
+  margin-bottom: 30px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* FORM STRUCTURE */
+form fieldset {
+  border: none;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+/* FIXED SELECTOR (IMPORTANT) */
+.sign-up-form > div,
+.sign-up-form fieldset > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* LABEL */
+label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+/*  INPUT + ICON SYSTEM  */
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+/* ICON CONTAINER */
+.input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 52px;
+  transition: 0.3s ease;
+}
+
+/* ICON */
+.input-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #c084fc;
+}
+
+/* INPUT */
+.input-icon input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 0 12px 0 45px; /* space for icon */
+  color: white;
+  font-size: 14px;
+}
+
+/* REMOVE DEFAULT INPUT STYLE */
+.input-icon input:focus {
+  outline: none;
+}
+
+/* HOVER */
+.input-icon:hover {
+  border: 1px solid #a855f7;
+}
+
+/* FOCUS */
+.input-icon:focus-within {
+  border: 1px solid #c084fc;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.6);
+}
+
+/* BUTTON  */
+
+button {
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-box > button:hover,
+.log-in:hover {
+  background: linear-gradient(90deg, #9333ea, #a855f7);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-box {
+  margin-top: 25px;
+}
+
+/* LOGIN TEXT */
+.login {
+  margin-top: 15px;
+  opacity: 0.85;
+}
+
+.login a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+/* PASSWORD ERROR */
+.pw-match {
+  display: none;
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* LOGIN TITLE */
+.login-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* RIGHT INFO */
+.right-info {
+  color: white;
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+}
+
+.right-info h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.right-info p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.right-info li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* FORGOT PASSWORD */
+.forgot-password {
+  margin-top: 6px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.forgot-password a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+.btn-box button {
+  width: 100%;
+}
+
+/*  ========== HUZIAFA'S SIGN UP FORM CODE ========== */
+/* . */
+/* . */
+/* . */
 /* page styles */
 
 #Dashboard {
@@ -383,6 +639,7 @@ body {
   width: 30px;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 .project > .buttons > .remove {
   background: no-repeat center / contain url("./assets/trash.svg");
@@ -557,6 +814,7 @@ body {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 form > #project-title {
   border-radius: 10px;
