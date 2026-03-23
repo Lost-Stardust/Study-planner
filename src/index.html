@@ -6,6 +6,213 @@
     <title>Study Planner</title>
   </head>
   <body>
+    <!-- ========== HUZIAFA'S SIGN UP FORM CODE ========== -->
+    <div id="sign-up-page">
+      <div class="cat-box">
+        <div class="logo-container">
+          <h1>TSP - Study Planner</h1>
+        </div>
+        <p class="credit">Student Productivity App</p>
+      </div>
+      <div class="form-box">
+        <p class="text">
+          Welcome to TSP - Study Planner. Create an account to organize your
+          tasks, track your study progress, and stay productive every day.
+          <br />
+          Sign up <em>now</em> to get started. <br /><br />
+          Start managing your studies smarter. <br /><br /><br />
+          Create your student account
+        </p>
+        <form action="" method="post" class="sign-up-form">
+          <fieldset>
+            <div class="input-box">
+              <label for="first-name">FIRST NAME</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  type="text"
+                  id="first-name"
+                  placeholder="Enter first name"
+                />
+              </div>
+            </div>
+
+            <div class="input-box">
+              <label for="last-name">LAST NAME</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  type="text"
+                  id="last-name"
+                  placeholder="Enter last name"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <!-- EMAIL -->
+            <div class="input-box">
+              <label for="email">EMAIL</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="Enter email" />
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="input-box">
+              <label for="phone">PHONE NUMBER (OPTIONAL)</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="input-box">
+              <label for="password">PASSWORD</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter password"
+                />
+
+                <i
+                  class="fa-solid fa-eye toggle-password"
+                  onclick="togglePassword('password', this)"
+                ></i>
+              </div>
+            </div>
+            <div class="input-box">
+              <label for="confirm-password">CONFIRM PASSWORD</label>
+
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="Confirm password"
+                />
+
+                <i
+                  class="fa-solid fa-eye toggle-password"
+                  onclick="togglePassword('confirm-password', this)"
+                ></i>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <div class="btn-box">
+          <button class="create-acc">Create Account</button>
+          <p class="login">
+            Already have an account?
+            <a id="go-to-log-in">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="log-in-page">
+      <div class="right-info">
+        <h1>TSP Study Planner</h1>
+
+        <p>
+          Organize your tasks, track your study progress, and stay productive
+          every day.
+        </p>
+
+        <ul>
+          <li>✔ Task Management</li>
+          <li>✔ Focus Timer</li>
+          <li>✔ Study Analytics</li>
+          <li>✔ Progress Tracking</li>
+        </ul>
+      </div>
+
+      <div class="form-box">
+        <h1 class="login-title">Log in to TSP Study Planner</h1>
+
+        <form>
+          <!-- EMAIL -->
+          <div class="input-box">
+            <label for="email">Email</label>
+
+            <div class="input-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="email" placeholder="Enter email" />
+            </div>
+          </div>
+
+          <!-- FORGOT PASSWORD -->
+          <div class="forgot-password">
+            <a id="go-to-forgot-pass">Forgot password?</a>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="input-box">
+            <label for="password">Password</label>
+
+            <div class="input-icon">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+              />
+
+              <i
+                class="fa-solid fa-eye toggle-password"
+                onclick="togglePassword('password', this)"
+              ></i>
+            </div>
+          </div>
+
+          <button type="submit" class="log-in">Log In</button>
+        </form>
+
+        <h2 class="signup-heading">Sign up to TSP Study Planner</h2>
+
+        <p>
+          Don't have an account?
+          <a id="go-to-sign-up">Create one</a>
+        </p>
+      </div>
+    </div>
+    <div id="forgot-pass-page">
+      <div class="form-box">
+        <h1>Reset your password</h1>
+        <p>Enter your email and we’ll send you a reset link.</p>
+
+        <div class="input-box">
+          <label>Email</label>
+          <div class="input-icon">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Enter your email" />
+          </div>
+        </div>
+
+        <div class="btn-box">
+          <button class="reset-link">Send Reset Link</button>
+        </div>
+
+        <p>
+          Remember your password?
+          <a id="go-to-log-in2">Log in</a>
+        </p>
+      </div>
+    </div>
+    <!-- ========== HUZIAFA'S SIGN UP FORM CODE ========== -->
     <div id="wrapper">
       <div id="sidebar">
         <div class="title"><b>Study planner</b></div>
