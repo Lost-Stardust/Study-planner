@@ -54,6 +54,7 @@ body {
   font-family: "Google Sans", sans-serif;
   color: white;
   cursor: default;
+  overflow: hidden;
 }
 
 #wrapper {
@@ -66,8 +67,7 @@ body {
     rgba(5, 0, 9, 1) 100%
   );
 }
-
-/* sidebar styles */
+/* page styles */
 
 #Dashboard {
   display: flex;
@@ -81,9 +81,36 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 4%;
-  margin-top: 1.5%;
   display: none;
+  position: relative;
+}
+#project-view {
+  flex: 1;
+  padding: 4%;
+  padding-top: 1.5%;
+  z-index: 1;
+  background: linear-gradient(
+    148deg,
+    rgba(24, 1, 42, 1) 0%,
+    rgba(57, 3, 97, 1) 50%,
+    rgba(5, 0, 9, 1) 100%
+  );
+  transform: translateX(0%);
+  -webkit-transition: transform 2s ease-in-out;
+  transition: transform 1.4s ease-in-out;
+}
+#project-view.inactive {
+  transform: translateX(-100%);
+}
+#task-view {
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+  padding-top: 1.5%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 0;
 }
 #Settings {
   display: flex;
@@ -93,6 +120,9 @@ body {
   margin-top: 1.5%;
   display: none;
 }
+
+/* sidebar styles */
+
 #sidebar {
   flex: 0.17;
   max-width: 254px;
@@ -100,6 +130,8 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 .options {
   flex: 1;
@@ -113,6 +145,9 @@ body {
   padding: 3%;
   border-radius: 8px;
   cursor: pointer;
+}
+.options > div:hover {
+  color: #9811fa;
 }
 .title {
   border-bottom: solid 1px rgb(83, 83, 83);
@@ -327,29 +362,149 @@ body {
   align-items: center;
   height: 65px;
   background: linear-gradient(160deg, #9811fa 0%, #53008e7f 100%);
+  cursor: pointer;
 }
-.Default.active {
+.project:hover {
+  background: linear-gradient(160deg, #9811fa 80%, #53008e7f 100%);
+}
+.Default.active,
+.Default {
   display: none;
 }
 .project > .buttons {
   display: flex;
   gap: 40px;
   height: 70%;
+  z-index: 3;
 }
 .project > .buttons > .remove,
-.project > .buttons > .add-task,
+.project > .buttons > .add-todo2,
 .project > .buttons > .edit {
   width: 30px;
   border: none;
+  cursor: pointer;
 }
 .project > .buttons > .remove {
   background: no-repeat center / contain url("./assets/trash.svg");
 }
-.project > .buttons > .add-task {
+.project > .buttons > .add-todo2 {
   background: no-repeat center / contain url("./assets/add.svg");
 }
 .project > .buttons > .edit {
   background: no-repeat center / contain url("./assets/pencil.svg");
+}
+
+/* tasks styles */
+
+#task-view > .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25em;
+}
+#back {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: none;
+  background: no-repeat center/contain url(./assets/caret-left.svg);
+  cursor: pointer;
+}
+.task-container {
+  flex: 1;
+  padding-top: 4%;
+  padding-left: 4%;
+  overflow-y: scroll;
+}
+.task-container > div {
+  display: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.add-todo {
+  background: no-repeat center/contain url(./assets/add.svg);
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+.todo {
+  border-radius: 25px;
+  width: 450px;
+  height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  background: linear-gradient(160deg, #9811fa 0%, #53008e7f 100%);
+  padding: 1%;
+}
+.title-box {
+  flex: 1;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.todo-title {
+  color: white;
+}
+.other-info {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: end;
+}
+.title-wrapper > p {
+  margin: 0;
+}
+.desc {
+  font-size: 15px;
+}
+.edit {
+  width: 25px;
+  height: 25px;
+}
+.edit:hover {
+  cursor: pointer;
+}
+.trash {
+  width: 25px;
+  height: 25px;
+}
+.trash:hover {
+  cursor: pointer;
+}
+.todo-date,
+.todo-priority {
+  font-size: 18px;
+  font-weight: bold;
+}
+.Default.active {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.task-container > div.active {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* adapted from https://github.com/Lost-Stardust/Calculator */
+.task-container::-webkit-scrollbar {
+  width: 1em;
+  height: 10px;
+}
+.task-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.664);
+  border-radius: 10px;
+}
+.task-container::-webkit-scrollbar-thumb {
+  background-color: #9911fa63;
+  outline: 1px solid black;
+  border-radius: 5px;
 }
 
 /* popup styles */
@@ -362,7 +517,7 @@ body {
   opacity: 0;
   transition: opacity 300ms ease-in-out;
   border-radius: 7px;
-  height: 180px;
+  height: 200px;
   z-index: 10;
   min-width: 25%;
   padding: 10px 15px 0 15px;
@@ -382,6 +537,7 @@ body {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
+  z-index: 2;
 }
 .popup form {
   display: flex;
@@ -402,6 +558,11 @@ body {
   border: none;
   cursor: pointer;
 }
+form > #project-title {
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}
 .popup.active {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -409,6 +570,141 @@ body {
 .overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+.todo-popup,
+.edit-popup {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  border-radius: 7px;
+  height: 200px;
+  z-index: 10;
+  min-width: 30%;
+  padding: 15px;
+  background: #53008e;
+
+  display: flex;
+  flex-direction: column;
+
+  border: solid black 1px;
+}
+.todo-popup.active,
+.edit-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.todo-popup form,
+.edit-popup form {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+}
+form > .buttons {
+  padding-top: 2%;
+}
+.todo-popup #todo-title,
+.edit-popup #edit-title {
+  font-size: 20px;
+  border-radius: 10px 10px 0px 0px;
+  border: none;
+}
+.todo-popup #desc,
+.edit-popup #edit-desc {
+  font-size: 20px;
+  border-radius: 0px 0px 10px 10px;
+  border: none;
+}
+.todo-popup .buttons,
+.edit-popup .buttons {
+  justify-content: space-between;
+}
+.leftBtns,
+.rightBtns {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+.leftBtns {
+  justify-content: start;
+}
+.leftBtns > .priority {
+  color: white;
+  border: #9811fa solid 2px;
+  border-radius: 10px;
+}
+.priority > option,
+.edit-priority > option {
+  color: black;
+}
+.buttons div button {
+  font-size: 17px;
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9811fa;
+  color: white;
+}
+/* .rightBtns .add {
+  color: white;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; 
+}*/
+.rightBtns button,
+.leftBtns button {
+  height: 30px;
+  background-color: rgba(128, 128, 128, 0.116);
+}
+.rightBtns .edit-confirm {
+  background-color: #7b2cbf;
+}
+#date,
+#edit-date {
+  background-color: rgba(128, 128, 128, 0.116);
+  border: #9811fa 2px solid;
+  border-radius: 10px;
+
+  width: 125px;
+  color: white;
+}
+.dropdowns,
+.edit-dropdowns {
+  display: flex;
+}
+.priority,
+#projectSelect,
+.edit-priority,
+#edit-projectSelect {
+  border: #9811fa 2px solid;
+  border-radius: 10px;
+  background: none;
+  color: white;
+}
+.priority:focus,
+#projectSelect:focus,
+.edit-priority:focus,
+#edit-projectSelect:focus {
+  outline: none;
+}
+#projectSelect,
+#edit-projectSelect {
+  padding: 4px;
+}
+#projectSelect > option,
+#edit-projectSelect > option {
+  color: black;
+}
+#picker {
+  color: white;
 }
 
 /* sidebar options active */
