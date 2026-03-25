@@ -83,4 +83,14 @@ options.forEach((option) => {
   });
 });
 
+//   code for task display
+
+const back = document.querySelector("#back");
+
+back.addEventListener("click", () => {
+  const projectView = document.querySelector("#project-view");
+  projectView.classList.remove("inactive");
+  console.log("click");
+});
+
 export {};
