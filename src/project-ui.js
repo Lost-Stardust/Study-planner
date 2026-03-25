@@ -117,21 +117,24 @@ const makeProject = (project) => {
   });
 
   console.log(projectList);
-  const add = document.querySelector(".add-todo2");
-  add.addEventListener("click", () => {
-    const popup = document.querySelector(".todo-popup");
-    const overlay = document.querySelector(".overlay");
-    const projectSelect = document.querySelector("#projectSelect");
-    popup.classList.add("active");
-    overlay.classList.add("active");
-    projectSelect.replaceChildren();
-    const projectContainer = document.querySelector(".projects-container");
-    const projectArr = projectContainer.querySelectorAll(".project");
-    for (let i = 0; i < projectArr.length; i++) {
-      const option = document.createElement("option");
-      option.textContent = projectArr[i].textContent;
-      projectSelect.appendChild(option);
-    }
+  const add = document.querySelectorAll(".add-todo2");
+  console.log(add);
+  add.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const popup = document.querySelector(".todo-popup");
+      const overlay = document.querySelector(".overlay");
+      const projectSelect = document.querySelector("#projectSelect");
+      popup.classList.add("active");
+      overlay.classList.add("active");
+      projectSelect.replaceChildren();
+      const projectContainer = document.querySelector(".projects-container");
+      const projectArr = projectContainer.querySelectorAll(".project");
+      for (let i = 0; i < projectArr.length; i++) {
+        const option = document.createElement("option");
+        option.textContent = projectArr[i].textContent;
+        projectSelect.appendChild(option);
+      }
+    });
   });
 };
 
