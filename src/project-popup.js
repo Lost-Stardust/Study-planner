@@ -1,6 +1,7 @@
 // code adapted from https://github.com/Lost-Stardust/Todo-list
 
 import { addProject } from "./add-project";
+import { projectList } from "./add-project";
 
 const projectPopup = () => {
   const add = document.querySelector(".add-project");
@@ -60,8 +61,18 @@ const projectPopup = () => {
 
   confirm.addEventListener("click", () => {
     event.preventDefault();
-    if (projectName.value == "") {
-      alert("Please enter a name for your project");
+
+    const projectNamesArr = [];
+    projectList.forEach((proj) => {
+      projectNamesArr.push(proj.name);
+    });
+
+    if (
+      projectName.value == "" ||
+      projectName.value == "Default" ||
+      projectNamesArr.includes(projectName.value)
+    ) {
+      alert("Please enter a unique name for your project");
     } else {
       popup.classList.remove("active");
       overlay.classList.remove("active");
