@@ -13,16 +13,6 @@ const makeProject = (project) => {
   projectdiv.textContent = project.name;
   console.log(projectdiv);
 
-  //   code for task display
-
-  const back = document.querySelector("#back");
-
-  back.addEventListener("click", () => {
-    const projectView = document.querySelector("#project-view");
-    projectView.classList.remove("inactive");
-    console.log("click");
-  });
-
   // Create div for each project to display its respective todos in
 
   const pDisplay = document.createElement("div");
