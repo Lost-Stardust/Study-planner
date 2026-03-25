@@ -70,6 +70,7 @@ const projectPopup = () => {
     if (
       projectName.value == "" ||
       projectName.value == "Default" ||
+      projectName.value == "project" ||
       projectNamesArr.includes(projectName.value)
     ) {
       alert("Please enter a unique name for your project");
